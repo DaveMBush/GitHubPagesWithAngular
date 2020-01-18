@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Document One",
+    "type": "folder",
+    "location": "/page2",
+    "children": [
+      {
+        "name": "src",
+        "type": "folder",
+        "location": "/page2",
+        "children": [
+          {
+            "name": "cdk",
+            "type": "folder",
+            "location": "/index",
+            "children": [
+              { "name": "package.json", "type": "file", "location": "/index" },
+              { "name": "BUILD.bazel", "type": "file", "location": "/index" }
+            ]
+          },
+          { "name": "material", "type": "file", "location": "/index" }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "angular",
+    "type": "folder",
+    "location": "/index",
+    "children": [
+      {
+        "name": "packages",
+        "type": "folder",
+        "location": "/index",
+        "children": [
+          { "name": ".travis.yml", "type": "file", "location": "/index" },
+          { "name": "firebase.json", "type": "file", "loation": "/index" }
+        ]
+      },
+      { "name": "package.json", "type": "file", "location": "/index" }
+    ]
+  },
+  {
+    "name": "angularjs",
+    "type": "folder",
+    "location": "/index",
+    "children": [
+      { "name": "gulpfile.js", "type": "file", "location": "/index" },
+      { "name": "README.md", "type": "file", "location": "/index" }
+    ]
+  }
+]
