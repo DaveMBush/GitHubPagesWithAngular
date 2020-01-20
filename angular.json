@@ -131,5 +131,8 @@
       }
     }
   },
-  "defaultProject": "GitHubPagesAngular"
+  "defaultProject": "GitHubPagesAngular",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

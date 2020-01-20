@@ -11,10 +11,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { NavTreeComponent } from './nav-tree/nav-tree.component';
+import { NavTreeComponent } from './index/nav-tree/nav-tree.component';
 import { MatTreeModule } from '@angular/material/tree';
 import { HttpClientModule } from '@angular/common/http';
 import { MarkdownModule } from 'ngx-markdown';
+import { StoreModule } from '@ngrx/store';
+import { reducers } from './store';
+import { EffectsModule } from '@ngrx/effects';
+import { ContentEffects } from './store/content/content.effects';
+import { SideNavEffects } from './store/sidenav/sidenav.effects';
 
 @NgModule({
   declarations: [
@@ -34,7 +39,14 @@ import { MarkdownModule } from 'ngx-markdown';
     MatIconModule,
     MatListModule,
     MatTreeModule,
-    MarkdownModule.forRoot()
+    MarkdownModule.forRoot(),
+    StoreModule.forRoot(reducers, {
+      runtimeChecks: {
+        strictStateImmutability: true,
+        strictActionImmutability: true
+      }
+    }),
+    EffectsModule.forRoot([ContentEffects, SideNavEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]

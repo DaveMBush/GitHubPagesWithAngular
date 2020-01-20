@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
-import { NavItemInterface } from './nav-tree/nav-item.interface';
+import { NavItemInterface } from './index/nav-tree/nav-item.interface';
 import { DocumentService } from './document.service';
 
 @Component({

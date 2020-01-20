@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
-import { NavItemInterface } from './nav-tree/nav-item.interface';
+import { NavItemInterface } from './index/nav-tree/nav-item.interface';
 import { catchError } from 'rxjs/operators';
 
 @Injectable({
