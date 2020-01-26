@@ -2,13 +2,14 @@
   <span>{{title}}</span>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
-    <app-nav-tree [data]="sideNav | async" (navigate)="onNavigate($event)"></app-nav-tree>
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$
+    | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ |
+    async) === false">
+    <app-nav-tree [data]="sideNav | async" (navigate)="onNavigate($event)">
+    </app-nav-tree>
   </mat-sidenav>
   <mat-sidenav-content>
-  <markdown [data]="content | async"></markdown>
+    <markdown [data]="content | async"></markdown>
   </mat-sidenav-content>
 </mat-sidenav-container>

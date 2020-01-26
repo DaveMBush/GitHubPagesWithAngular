@@ -1,15 +1,18 @@
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-  <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding matTreeNodePaddingIndent="10">
+  <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding
+    matTreeNodePaddingIndent="10">
     <div class="title" (click)="navigate.emit(node)">{{node.name}}</div>
     <button mat-icon-button disabled></button>
   </mat-tree-node>
 
-  <mat-tree-node *matTreeNodeDef="let node; when: hasChild" [ngClass]="'level-' + node.level" matTreeNodePadding matTreeNodePaddingIndent="10">
+  <mat-tree-node *matTreeNodeDef="let node; when: hasChild"
+    [ngClass]="'level-' + node.level" matTreeNodePadding
+    matTreeNodePaddingIndent="10">
     <div matTreeNodeToggle>
-    <mat-icon class="mat-icon-rtl-mirror">
-      {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_left'}}
-    </mat-icon>
-    <div class="title">{{node.name}}</div>
+      <mat-icon class="mat-icon-rtl-mirror">
+        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_left'}}
+      </mat-icon>
+      <div class="title">{{node.name}}</div>
     </div>
   </mat-tree-node>
 </mat-tree>
