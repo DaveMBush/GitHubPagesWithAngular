@@ -1,13 +1,27 @@
 {
   "extends": "tslint:recommended",
   "rules": {
-    "array-type": false,
+    "align": true,
+    "array-type": [
+      true,
+      "generic"
+    ],
     "arrow-parens": false,
+    "component-class-suffix": true,
+    "component-selector": [
+      true,
+      "element",
+      "app",
+      "kebab-case"
+    ],
+    "contextual-lifecycle": true,
+    "cyclomatic-complexity": [
+      true,
+      10
+    ],
     "deprecation": {
       "severity": "warning"
     },
-    "component-class-suffix": true,
-    "contextual-lifecycle": true,
     "directive-class-suffix": true,
     "directive-selector": [
       true,
@@ -15,21 +29,27 @@
       "app",
       "camelCase"
     ],
-    "component-selector": [
-      true,
-      "element",
-      "app",
-      "kebab-case"
-    ],
+    "eofline": true,
     "import-blacklist": [
       true,
       "rxjs/Rx"
     ],
+    "import-spacing": true,
     "interface-name": false,
-    "max-classes-per-file": false,
+    "interface-over-type-literal": true,
+    "linebreak-style": [
+      true,
+      "LF"
+    ],
+    "max-classes-per-file": true,
     "max-line-length": [
       true,
-      140
+      {
+        "limit": 80,
+        "ignore-pattern": "^import |^export {(.*?)}",
+        "check-strings": true,
+        "check-regex": true
+      }
     ],
     "member-access": false,
     "member-ordering": [
@@ -43,6 +63,27 @@
         ]
       }
     ],
+    "newline-per-chained-call": true,
+    "no-boolean-literal-compare": true,
+    "no-duplicate-imports": true,
+    "no-dynamic-delete": true,
+    "no-irregular-whitespace": true,
+    "no-magic-numbers": true,
+    "no-trailing-whitespace": true,
+    "no-var-keyword": true,
+    "prefer-const": true,
+    "prefer-for-of": true,
+    "prefer-on-push-component-change-detection": true,
+    "prefer-object-spread": true,
+    "prefer-output-readonly": true,
+    "prefer-switch": true,
+    "prefer-template": true,
+    "semicolon": true,
+    "triple-equals": true,
+    "use-isnan": true,
+    "variable-name": true,
+    "no-any": true,
+    "no-conflicting-lifecycle": true,
     "no-consecutive-blank-lines": false,
     "no-console": [
       true,
@@ -53,11 +94,18 @@
       "trace"
     ],
     "no-empty": false,
+    "no-host-metadata-property": true,
     "no-inferrable-types": [
-      true,
+      false,
       "ignore-params"
     ],
+    "no-input-rename": true,
+    "no-inputs-metadata-property": true,
     "no-non-null-assertion": true,
+    "no-output-native": true,
+    "no-output-on-prefix": true,
+    "no-output-rename": true,
+    "no-outputs-metadata-property": true,
     "no-redundant-jsdoc": true,
     "no-switch-case-fall-through": true,
     "no-var-requires": false,
@@ -66,22 +114,23 @@
       "as-needed"
     ],
     "object-literal-sort-keys": false,
-    "ordered-imports": false,
+    "ordered-imports": true,
+    "prefer-readonly": true,
     "quotemark": [
       true,
       "single"
     ],
     "trailing-comma": false,
-    "no-conflicting-lifecycle": true,
-    "no-host-metadata-property": true,
-    "no-input-rename": true,
-    "no-inputs-metadata-property": true,
-    "no-output-native": true,
-    "no-output-on-prefix": true,
-    "no-output-rename": true,
-    "no-outputs-metadata-property": true,
     "template-banana-in-box": true,
     "template-no-negated-async": true,
+    "template-conditional-complexity": [
+      true,
+      4
+    ],
+    "template-cyclomatic-complexity": [
+      true,
+      5
+    ],
     "use-lifecycle-interface": true,
     "use-pipe-transform-interface": true
   },

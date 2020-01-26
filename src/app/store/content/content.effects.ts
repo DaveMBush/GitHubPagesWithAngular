@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { createEffect, ofType, Actions } from '@ngrx/effects';
-import { get, getResult } from './content.actions';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { map, switchMap } from 'rxjs/operators';
 import { DocumentService } from 'src/app/document.service';
-import { switchMap, map } from 'rxjs/operators';
+import { get, getResult } from './content.actions';
 
 
 
@@ -12,8 +12,8 @@ export class ContentEffects {
 
 
   constructor(
-    private actions$: Actions,
-    private docService: DocumentService
+    private readonly actions$: Actions,
+    private readonly docService: DocumentService
   ) {}
 
   getContent: Actions = createEffect(

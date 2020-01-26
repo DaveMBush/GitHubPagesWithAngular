@@ -1,5 +1,4 @@
 import { createAction, props, union } from '@ngrx/store';
-import { UniqueSelectionDispatcher } from '@angular/cdk/collections';
 import { NavItemInterface } from 'src/app/index/nav-tree/nav-item.interface';
 
 export const get = createAction(

@@ -1,12 +1,12 @@
 <mat-toolbar color="primary">
-  <span>GitHubPagesAngular</span>
+  <span>{{title}}</span>
 </mat-toolbar>
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <app-nav-tree [data]="sideNav | async"></app-nav-tree>
+    <app-nav-tree [data]="sideNav | async" (navigate)="onNavigate($event)"></app-nav-tree>
   </mat-sidenav>
   <mat-sidenav-content>
   <markdown [data]="content | async"></markdown>

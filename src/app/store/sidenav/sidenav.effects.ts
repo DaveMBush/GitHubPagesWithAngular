@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { createEffect, ofType, Actions } from '@ngrx/effects';
-import { get, getResult } from './sidenav.actions';
+import { Actions, createEffect, ofType } from '@ngrx/effects';
+import { map, switchMap } from 'rxjs/operators';
 import { DocumentService } from 'src/app/document.service';
-import { switchMap, map } from 'rxjs/operators';
 import { NavItemInterface } from 'src/app/index/nav-tree/nav-item.interface';
+import { get, getResult } from './sidenav.actions';
 
 
 
@@ -13,8 +13,8 @@ export class SideNavEffects {
 
 
   constructor(
-    private actions$: Actions,
-    private docService: DocumentService
+    private readonly actions$: Actions,
+    private readonly docService: DocumentService
   ) { }
 
   getContent: Actions = createEffect(

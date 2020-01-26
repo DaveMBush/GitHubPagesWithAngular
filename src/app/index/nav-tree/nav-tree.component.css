@@ -1,7 +1,5 @@
-.type-icon {
-  color: #757575;
+.title {
   margin-left: 10px;
-  margin-right: 5px;
 }
 
 button {
@@ -9,28 +7,48 @@ button {
   right: 10px;
 }
 
-a {
-  text-decoration: none;
-}
-
 mat-tree-node:hover {
-  background-color: #bbb;
+  background-color: #eee;
 }
 
 .level-0 {
   font-size: 22px;
   font-weight: bold;
-  background-color: #ccc;
+}
+
+.level-0 .title {
+  float: right;
+  width: 250px;
+}
+
+.level-0 .mat-icon-rtl-mirror {
+  float: right;
 }
 
 .level-1 {
   font-size: 18px;
   font-weight: bold;
-  background-color: #ddd;
+}
+
+.level-1 .title {
+  float: right;
+  width: 240px;
+}
+
+.level-1 .mat-icon-rtl-mirror {
+  float: right;
 }
 
 .level-2 {
   font-size: 16px;
   font-weight: bold;
-  background-color: #eee;
+}
+
+.level-2 .title {
+  float: right;
+  width: 230px;
+}
+
+.level-2 .mat-icon-rtl-mirror {
+  float: right;
 }

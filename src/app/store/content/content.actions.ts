@@ -1,5 +1,4 @@
 import { createAction, props, union } from '@ngrx/store';
-import { UniqueSelectionDispatcher } from '@angular/cdk/collections';
 
 export const get = createAction(
   '[Content] Get',
