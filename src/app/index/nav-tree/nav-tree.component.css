@@ -1,5 +1,10 @@
 .title {
   margin-left: 10px;
+  cursor: pointer;
+}
+
+mat-icon {
+  cursor: pointer;
 }
 
 button {
@@ -51,4 +56,8 @@ mat-tree-node:hover {
 
 .level-2 .mat-icon-rtl-mirror {
   float: right;
+}
+
+.selected {
+  background-color: #ccc;
 }

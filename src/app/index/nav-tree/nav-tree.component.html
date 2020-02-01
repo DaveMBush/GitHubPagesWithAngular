@@ -1,18 +1,23 @@
 <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
-  <mat-tree-node *matTreeNodeDef="let node" matTreeNodeToggle matTreeNodePadding
-    matTreeNodePaddingIndent="10">
+  <mat-tree-node *matTreeNodeDef="let node"
+    matTreeNodeToggle matTreeNodePadding
+    matTreeNodePaddingIndent="10"
+    [ngClass]="{'selected': node.location === router.url}">
     <div class="title" (click)="navigate.emit(node)">{{node.name}}</div>
     <button mat-icon-button disabled></button>
   </mat-tree-node>
 
-  <mat-tree-node *matTreeNodeDef="let node; when: hasChild"
-    [ngClass]="'level-' + node.level" matTreeNodePadding
-    matTreeNodePaddingIndent="10">
+  <mat-tree-node *matTreeNodeDef="let node; when: hasChild" [ngClass]="{
+      'level-0': node.level === 0,
+      'level-1': node.level === 1,
+      'level-2': node.level === 2,
+      'selected': node.location === router.url
+      }" matTreeNodePadding matTreeNodePaddingIndent="10">
     <div matTreeNodeToggle>
       <mat-icon class="mat-icon-rtl-mirror">
         {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_left'}}
       </mat-icon>
-      <div class="title">{{node.name}}</div>
+      <div class="title" (click)="navigate.emit(node)">{{node.name}}</div>
     </div>
   </mat-tree-node>
 </mat-tree>

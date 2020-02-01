@@ -35,6 +35,8 @@ export class IndexComponent implements OnInit {
     private readonly router: Router,
     private readonly store: Store<State>
   ) {
+    this.content = this.store.select((s: State) => s.content);
+    this.sideNav = this.store.select((s: State) => s.sideNav);
     this.store.dispatch(getSideNav());
     router.events
       .pipe(
@@ -42,7 +44,7 @@ export class IndexComponent implements OnInit {
       )
       .subscribe((event: NavigationEnd) => {
         const url: string = this.router.routerState.snapshot.url;
-        if (url.length === 0) {
+        if (url.length < 2) {
           this.sideNav
           .pipe(
             filter((x: Array<NavItemInterface>) => x.length > 0)
@@ -55,8 +57,6 @@ export class IndexComponent implements OnInit {
       });
   }
   ngOnInit(): void {
-    this.content = this.store.select((s: State) => s.content);
-    this.sideNav = this.store.select((s: State) => s.sideNav);
   }
 
   onNavigate(node: NavItemInterface) {

@@ -13,7 +13,7 @@ export class DocumentService {
   constructor(private readonly httpClient: HttpClient) { }
   getPage(page: string): Observable<string> {
     return this.httpClient.get(
-      `{this.baseUrl}{page}.md`,
+      `${this.baseUrl}${page}.md`,
       { responseType: 'text' as 'json' }
     )
     .pipe(
@@ -22,7 +22,7 @@ export class DocumentService {
   }
   getSideNav(): Observable<Array<NavItemInterface>> {
     return this.httpClient
-    .get(`{this.baseUrl}/side-nav.json`) as
+    .get(`${this.baseUrl}/side-nav.json`) as
       Observable<Array<NavItemInterface>>;
   }
 }

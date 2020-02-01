@@ -3,6 +3,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { of as observableOf } from 'rxjs';
 import { NavItemInterface } from './nav-item.interface';
+import { Router } from '@angular/router';
 
 /**
  * Flattened tree node that has been created from a
@@ -48,7 +49,7 @@ export class NavTreeComponent {
    */
   dataSource: MatTreeFlatDataSource<NavItemInterface, FlatTreeNode>;
 
-  constructor() {
+  constructor(public router: Router) {
     this.treeFlattener = new MatTreeFlattener(
       this.transformer,
       this.getLevel,
